@@ -467,3 +467,4 @@ document.getElementById("fotoFrontal").addEventListener("change", function (e) {
     reader.readAsDataURL(file);
   }
 });
+
