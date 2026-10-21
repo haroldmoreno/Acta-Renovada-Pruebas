@@ -1,13 +1,14 @@
-// Prototipo de guardado centralizado de actas en SharePoint
+document.addEventListener("DOMContentLoaded", () => {
+  const botonEnviar = document.getElementById("btnEnviar");
 
-async function llenarPDFConDatosPersonales() {
-    const url = "template.pdf";
-    const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
+  if (!botonEnviar) {
+    console.error('No se encontró el botón con id="btnEnviar".');
+    return;
+  }
 
-    const pdfDoc = await PDFDocument.load(existingPdfBytes);
-    const form = pdfDoc.getForm();
+  botonEnviar.addEventListener("click", llenarPDFConDatosPersonales);
+});
 
-    const cedula = document.getElementById("ID").value;
 
   // Validar que los campos no estén vacíos
   const tipoEquipo = document.getElementById("tipoEquipo").value;
