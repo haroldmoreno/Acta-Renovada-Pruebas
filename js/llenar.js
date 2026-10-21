@@ -453,14 +453,4 @@ function bloquearFormulario() {
 // Puedes llamar a esta función al hacer clic en el botón "Enviar"
 document.getElementById("btnEnviar").addEventListener("click", llenarPDFConDatosPersonales);
 
-document.getElementById("fotoFrontal").addEventListener("change", function (e) {
-  const file = e.target.files[0];
-  if (file) {
-    const reader = new FileReader();
-    reader.onload = (ev) => {
-      document.getElementById("previewFrontal").src = ev.target.result;
-      document.getElementById("previewFrontal").style.display = "block";
-    };
-    reader.readAsDataURL(file);
-  }
-});
+
