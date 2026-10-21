@@ -1,11 +1,11 @@
 // Prototipo de guardado centralizado de actas en SharePoint
 
-const url = "template.pdf";
-const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
+async function llenarPDFConDatosPersonales() {
+  const url = "template.pdf";
+  const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
 
-const pdfDoc = await PDFDocument.load(existingPdfBytes);
-const form = pdfDoc.getForm();
-  const nombre = document.getElementById("name").value;
+  const pdfDoc = await PDFDocument.load(existingPdfBytes);
+  const form = pdfDoc.getForm();
   const cedula = document.getElementById("ID").value;
   const nombreti = document.getElementById("nameTi").value;
   const IDTI = document.getElementById("IDTI").value;
