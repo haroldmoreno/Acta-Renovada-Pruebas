@@ -1,5 +1,4 @@
-// Prototipo de guardado centralizado de actas en SharePoint
-
+async function llenarPDFConDatosPersonales() {
 async function llenarPDFConDatosPersonales() {
   const url = "template.pdf";
   const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
