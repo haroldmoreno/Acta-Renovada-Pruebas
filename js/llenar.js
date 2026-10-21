@@ -1,13 +1,10 @@
-const { PDFDocument } = window.PDFLib;
+// Prototipo de guardado centralizado de actas en SharePoint
 
-async function llenarPDFConDatosPersonales() {
-  const url = "template.pdf";
-  const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
+const url = "template.pdf";
+const existingPdfBytes = await fetch(url).then((res) => res.arrayBuffer());
 
-  const pdfDoc = await PDFDocument.load(existingPdfBytes);
-  const form = pdfDoc.getForm();
-
-  // Obtener valores del formulario HTML
+const pdfDoc = await PDFDocument.load(existingPdfBytes);
+const form = pdfDoc.getForm();
   const nombre = document.getElementById("name").value;
   const cedula = document.getElementById("ID").value;
   const nombreti = document.getElementById("nameTi").value;
