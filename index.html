@@ -287,4 +287,29 @@
     <script src="js/firmas.js"></script>
     <script src="js/listas.js"></script>
   </body>
-</html>
+</html> function rellenarEquipoActa(equipo) {
+  const campos = {
+    serial: equipo.serial,
+    tipoEquipo: equipo.tipo,
+    marcaEquipo: equipo.marca,
+    modeloEquipo: equipo.modelo
+  };
+
+  for (const [id, dato] of Object.entries(campos)) {
+    const campo = document.getElementById(id);
+    if (!campo) {
+      throw new Error(`No se encuentra el campo ${id}`);
+    }
+
+    const valor = String(dato ?? "");
+
+    if (
+      campo instanceof HTMLSelectElement &&
+      !Array.from(campo.options).some(opcion => opcion.value === valor)
+    ) {
+      campo.add(new Option(valor || "Sin información", valor));
+    }
+
+    campo.value = valor;
+  }
+}</html>
